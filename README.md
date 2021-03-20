@@ -1,2 +1,27 @@
-# vue3-demos
-日常积累的功能demo的汇集。
+# dit.prod.zhcg.frontend
+
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn dev
+```
+
+### Compiles and minifies for production
+```
+yarn run build
+```
+
+### Run your tests
+```
+yarn run test
+```
+
+### Lints and fixes files
+```
+yarn run lint
+```
+
