@@ -42,7 +42,7 @@
     </aside>
 
     <footer>
-      <span>degin by xct，power by vue3.</span>
+      <span>degin by xct，power by vue3&vite.</span>
     </footer>
   </div>
 </template>
