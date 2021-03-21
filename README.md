@@ -1,4 +1,4 @@
-# Sun Mar 2021
+# Mar 2021
 
 ## Project setup
 ```
