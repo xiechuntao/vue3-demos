@@ -11,8 +11,8 @@ export const names = [
   },
   {
     "NO": 3,
-    "EN": "planeRotate",
-    "CN": "平面旋转"
+    "EN": "gaode",
+    "CN": "高德地图"
   },
   {
     "NO": 4,
