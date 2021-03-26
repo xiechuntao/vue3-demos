@@ -1,8 +1,11 @@
 <template>
   <!-- <h1>HELLO XCT!!!!</h1> -->
-  <h1>{{msg}}</h1>
-  <input type="text" v-model="msg"/>
-  <a href='myprotocol://http://192.168.10.85:8080/cs/restfull/operationRestfullApi/excuteSqlByCode?authorJson={“loginAccount”:“admin”}&parmJson={"code":"HuoQuTongDaoGISLieBiao","params":{}}'>Lorem </a> 
+  <h1 @click="click_promise()">{{ msg }}</h1>
+  <input type="text" v-model="msg" />
+  <a
+    href='myprotocol://http://192.168.10.85:8080/cs/restfull/operationRestfullApi/excuteSqlByCode?authorJson={“loginAccount”:“admin”}&parmJson={"code":"HuoQuTongDaoGISLieBiao","params":{}}'
+    >Lorem
+  </a>
   <ul class="todo-main">
     <li class="input">
       <div>
@@ -15,51 +18,88 @@
         <el-input v-model="todo.eat" placeholder="请输入食物"></el-input>
       </div>
       <div>
-        <el-button  @click="add()" size="mini" type="danger" icon="el-icon-plus" circle />
+        <el-button
+          @click="add()"
+          size="mini"
+          type="danger"
+          icon="el-icon-plus"
+          circle
+        />
       </div>
     </li>
     <li v-for="(item, i) in todoList" :key="i">
-      <div>{{item.date}}</div>
-      <div>{{item.time}}</div>
-      <div>{{item.eat}}</div>
+      <div>{{ item.date }}</div>
+      <div>{{ item.time }}</div>
+      <div>{{ item.eat }}</div>
       <div>
-        <el-button @click="del(i)" size="mini" type="danger" icon="el-icon-delete" circle />
+        <el-button
+          @click="del(i)"
+          size="mini"
+          type="danger"
+          icon="el-icon-delete"
+          circle
+        />
       </div>
     </li>
   </ul>
- 
 </template>
 
 <script lang="ts">
 // <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "1_hello xct",
   data() {
     return {
-      msg: 'use ts',
-      todo: {'date':null,'time':null,'eat':null},
+      msg: "test promise",
+      todo: { date: null, time: null, eat: null },
       todoList: [
-        {'date':'2021-3-21','time': '晚餐','eat':'沙县'},
-        {'date':'2021-3-22','time': '午餐','eat':'黄焖鸡'},
-      ]
+        { date: "2021-3-21", time: "晚餐", eat: "沙县" },
+        { date: "2021-3-22", time: "午餐", eat: "黄焖鸡" },
+      ],
     };
   },
- 
+
   components: {},
   computed: {},
-  created() {},
+  mounted() {},
   methods: {
     add() {
       // this.todoList.push(this.todo);
       // this.todo 直接push进去的话，只是push了对象的指针
-      this.todoList.push({...this.todo});
+      this.todoList.push({ ...this.todo });
     },
     del(i) {
-      this.todoList.splice(i,1);
-    }
-  }
-})
+      this.todoList.splice(i, 1);
+    },
+
+    use_promise() {
+      console.log("方法已经被调用");
+      var P = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          var num = Math.ceil(Math.random() * 10);
+          console.log("执行了promise", num);
+          if (num > 5) {
+            resolve("这是成功后返回的值");
+          } else {
+            reject("这是错误后返回的值");
+          }
+        }, 2000);
+      });
+      return P;
+    },
+
+    click_promise() {
+      this.use_promise()
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((res) => {
+          console.log(res);
+        });
+    },
+  },
+});
 </script>
 <style lang='scss' scoped>
 .todo-main {
