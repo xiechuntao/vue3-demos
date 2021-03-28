@@ -2,7 +2,7 @@
   <!-- <h1>HELLO XCT!!!!</h1> -->
   <h1>{{msg}}</h1>
   <input type="text" v-model="msg"/>
- 
+  <a href='myprotocol://http://192.168.10.85:8080/cs/restfull/operationRestfullApi/excuteSqlByCode?authorJson={“loginAccount”:“admin”}&parmJson={"code":"HuoQuTongDaoGISLieBiao","params":{}}'>Lorem </a> 
   <ul class="todo-main">
     <li class="input">
       <div>
@@ -45,17 +45,15 @@ export default defineComponent({
       ]
     };
   },
-  setup() {
-    return {
-      input: ref('')
-    }
-  },
+ 
   components: {},
   computed: {},
   created() {},
   methods: {
     add() {
-      this.todoList.push(this.todo);
+      // this.todoList.push(this.todo);
+      // this.todo 直接push进去的话，只是push了对象的指针
+      this.todoList.push({...this.todo});
     },
     del(i) {
       this.todoList.splice(i,1);
