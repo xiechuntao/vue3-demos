@@ -4,6 +4,7 @@
       <h1 id="LOGO">
         <img src="./assets/logo.png" alt="" style="height: 28px" />
         HELLO XCT
+        {{ msg }}
       </h1>
       <span class="title">{{ $route.meta.title }}</span>
 
@@ -50,17 +51,21 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import { mapGetters } from "vuex";
+// import io from "socket.io-client";
 
 export default {
   name: "App",
 
   data() {
     return {
+      msg: "--",
       drawer: false,
       direction: "rtl",
     };
   },
-  mounted() {},
+  mounted() {
+    this.getHelloWorldPort();
+  },
   computed: {
     ...mapGetters(["demoNames"]),
   },
@@ -69,6 +74,22 @@ export default {
       let value = `${item.NO}-${item.EN}`;
       console.log(value);
       this.$router.push({ name: value });
+    },
+    getHelloWorldPort() {
+      // http://localhost:3000/
+      let url = "http://localhost:3000/";
+      axios.get(url).then((res) => {
+        this.msg = res.data;
+      });
+
+      // let socket = io(url); // 建立链接
+      // // 此时会触发后台的connect事件
+      // socket.on("msg", function (data) {
+      //   // 监听服务端的消息“msg”
+      //   socket.emit("msg", { rp: "fine,thank you" }); //向服务器发送消息
+      //   console.log(data);
+      //   debugger;
+      // });
     },
     closeDrawer() {},
   },
