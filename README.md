@@ -12,7 +12,7 @@ yarn dev
 
 ### Compiles and minifies for production
 ```
-yarn run build
+yarn build
 ```
 
 ### Run your tests
