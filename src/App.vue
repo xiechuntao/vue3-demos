@@ -49,9 +49,7 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import { mapGetters } from "vuex";
-// import io from "socket.io-client";
 
 export default {
   name: "App",
@@ -77,19 +75,20 @@ export default {
     },
     getHelloWorldPort() {
       // http://localhost:3000/
-      let url = "http://localhost:3000/";
+      let url = "http://192.168.199.207:2000/";
       axios.get(url).then((res) => {
         this.msg = res.data;
       });
 
-      // let socket = io(url); // 建立链接
-      // // 此时会触发后台的connect事件
-      // socket.on("msg", function (data) {
-      //   // 监听服务端的消息“msg”
-      //   socket.emit("msg", { rp: "fine,thank you" }); //向服务器发送消息
-      //   console.log(data);
-      //   debugger;
-      // });
+      let url2 = "http://127.0.0.1:3000/";
+      let socket = io(url2, {
+        transports: ["websocket"],
+      }); // 指定连接地址
+
+      // 指定服务端的标识open 客户端利用on事件监听
+      socket.on("open", (data) => {
+        console.log(data);
+      });
     },
     closeDrawer() {},
   },
