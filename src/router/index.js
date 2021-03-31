@@ -1,7 +1,5 @@
 import { createRouter, /*createWebHashHistory,*/ createWebHistory } from "vue-router"
 import store from '../store/index.js'
-// import axios from 'axios'
-
 
 // 1. 定义路由组件， 注意，这里一定要使用 文件的全名（包含文件后缀名）
 // 首页

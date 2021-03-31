@@ -74,8 +74,8 @@ export default {
       this.$router.push({ name: value });
     },
     getHelloWorldPort() {
-      // http://localhost:3000/
-      let url = "http://192.168.199.207:2000/";
+      let url = "http://localhost:2000/";
+      // let url = "http://192.168.199.207:2000/";
       axios.get(url).then((res) => {
         this.msg = res.data;
       });

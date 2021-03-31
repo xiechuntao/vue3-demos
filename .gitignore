@@ -17,3 +17,17 @@ bin-release/
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
 node_modules
+dist/config.js
+dist/favicon.ico
+dist/index.html
+dist/_assets/404.f6a34c1c.js
+dist/_assets/element-icons.0bf2ea75.woff
+dist/_assets/element-icons.a8267d41.ttf
+dist/_assets/home.8c56507b.js
+dist/_assets/home.39a83832.js
+dist/_assets/home.d34f243e.js
+dist/_assets/home.de7d5e60.js
+dist/_assets/home.e779d837.js
+dist/_assets/index.c9335928.js
+dist/_assets/logo.3b714202.png
+dist/_assets/style.c67d1d58.css

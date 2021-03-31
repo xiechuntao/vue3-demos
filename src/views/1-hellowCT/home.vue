@@ -46,11 +46,13 @@
 
 <script lang="ts">
 // <script>
+import axios from "axios";
 import { defineComponent, ref } from "vue";
 export default defineComponent({
   name: "1_hello xct",
   data() {
     return {
+      basePort: "http://127.0.0.1:3000/",
       msg: "test promise",
       todo: { date: null, time: null, eat: null },
       todoList: [
@@ -62,7 +64,11 @@ export default defineComponent({
 
   components: {},
   computed: {},
-  mounted() {},
+  mounted() {
+    axios.get(this.basePort + "demos1/getTodoList").then((res) => {
+      this.todoList = res.data.data;
+    });
+  },
   methods: {
     add() {
       // this.todoList.push(this.todo);
