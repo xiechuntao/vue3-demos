@@ -1,5 +1,5 @@
 <template>
-<h1>新电脑上的第一次提交</h1>
+<h1>新电脑上的第一次提交，</h1>
 </template>
 
 <script>
