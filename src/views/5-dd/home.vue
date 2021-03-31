@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <input type="text" id="q" />
-    <ul id="ul1"></ul>
-  </div>
+<h1>新电脑上的第一次提交，，</h1>
 </template>
 
 <script>
