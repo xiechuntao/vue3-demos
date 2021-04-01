@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <header>
+    <header v-if="false">
       <h1 id="LOGO">
         <img src="./assets/logo.png" alt="" style="height: 28px" />
         HELLO XCT

@@ -21,7 +21,7 @@ const baseRoutes = [
 ];
 // demos view
 let demoRoutes = [];
-console.log(names)
+// console.log(names)
 const demoNames = names;
 store.commit("demoNames", demoNames);
 for (let item of demoNames) {

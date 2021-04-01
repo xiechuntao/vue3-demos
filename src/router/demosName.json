@@ -21,7 +21,7 @@
   },
   {
     "NO": 5,
-    "EN": "dd",
-    "CN": "待定"
+    "EN": "multipleChoice",
+    "CN": "多选"
   }
 ]
