@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <header v-if="false">
+    <header v-if="true">
       <h1 id="LOGO">
         <img src="./assets/logo.png" alt="" style="height: 28px" />
         HELLO XCT
@@ -63,6 +63,16 @@ export default {
   },
   mounted() {
     this.getHelloWorldPort();
+
+    Array.from(new Set([1, 2, 3, 2, 4, "2", "22", "嘎嘎"]));
+    let arr = [1, 2, 3, 2, 4, "2", "22", "嘎嘎"];
+    let newArr = [];
+    arr.forEach(function (item) {
+      if (newArr.indexOf() === -1) {
+        newArr.push(item);
+      }
+    });
+    console.log(newArr);
   },
   computed: {
     ...mapGetters(["demoNames"]),
@@ -80,7 +90,7 @@ export default {
         this.msg = res.data;
       });
 
-      let url2 = "http://127.0.0.1:3000/";
+      let url2 = "http://127.0.0.1:3100/";
       let socket = io(url2, {
         transports: ["websocket"],
       }); // 指定连接地址

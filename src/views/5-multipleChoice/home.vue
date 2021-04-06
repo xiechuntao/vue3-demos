@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import _ from "lodash";
 import names from "/@/router/demosName.json";
 export default {
   data() {
@@ -54,7 +53,7 @@ export default {
         this.list.map((item, i) => {
           item.selected = true;
         });
-        this.choiceItems = { ...this.list };
+        this.choiceItems = [...this.list];
       } else {
         this.choiceAllBtn = false;
         this.list.map((item, i) => {
@@ -65,12 +64,14 @@ export default {
     },
     choice(i) {
       if (this.list[i].selected === true) {
+        console.log(this.choiceItems);
         // 左侧反选
         this.list[i].selected = false;
         // 找到匹配的
         let delI = _.findIndex(this.choiceItems, (o) => {
           return o.NO === this.list[i].NO;
         });
+        console.log(delI);
         // 右侧移除
         this.choiceItems.splice(delI, 1);
         // this.choiceItems.splice(this.list[i], 1);

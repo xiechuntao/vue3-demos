@@ -52,7 +52,8 @@ export default defineComponent({
   name: "1_hello xct",
   data() {
     return {
-      basePort: "http://127.0.0.1:3000/",
+      basePort: "http://127.0.0.1:3100/",
+      // basePort: "http://212.64.32.35:3100/",
       msg: "test promise",
       todo: { date: null, time: null, eat: null },
       todoList: [
