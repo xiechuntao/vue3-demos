@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import names from "/@/router/demosName.json";
+import names from "/@/router/galleryItems.json";
 export default {
   data() {
     return {

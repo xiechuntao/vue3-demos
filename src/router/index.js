@@ -4,7 +4,7 @@ import store from '../store/index.js'
 // 1. 定义路由组件， 注意，这里一定要使用 文件的全名（包含文件后缀名）
 // 首页
 import home from "../views/home/home.vue";
-import names from './demosName.json';
+import names from './galleryItems.json';
 
 
 // 2. 定义路由配置
