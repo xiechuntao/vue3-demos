@@ -64,15 +64,7 @@ export default {
   mounted() {
     this.getHelloWorldPort();
 
-    Array.from(new Set([1, 2, 3, 2, 4, "2", "22", "嘎嘎"]));
-    let arr = [1, 2, 3, 2, 4, "2", "22", "嘎嘎"];
-    let newArr = [];
-    arr.forEach(function (item) {
-      if (newArr.indexOf() === -1) {
-        newArr.push(item);
-      }
-    });
-    console.log(newArr);
+    console.error(process.env);
   },
   computed: {
     ...mapGetters(["demoNames"]),
