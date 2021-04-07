@@ -1,6 +1,6 @@
 <template>
   <!-- <h1>HELLO XCT!!!!</h1> -->
-  <h1 @click="click_promise()">{{ msg }}</h1>
+  <h1 @click="click_promise()">{{ msg }} {{ ExpressUrl }}</h1>
   <input type="text" v-model="msg" />
   <a
     href='myprotocol://http://192.168.10.85:8080/cs/restfull/operationRestfullApi/excuteSqlByCode?authorJson={“loginAccount”:“admin”}&parmJson={"code":"HuoQuTongDaoGISLieBiao","params":{}}'
@@ -44,16 +44,15 @@
   </ul>
 </template>
 
-<script lang="ts">
-// <script>
+<script>
 import axios from "axios";
-import { defineComponent, ref } from "vue";
-export default defineComponent({
-  name: "1_hello xct",
+
+// debugger;
+export default {
+  name: "1_helloXct",
   data() {
     return {
-      basePort: "http://127.0.0.1:3100/",
-      // basePort: "http://212.64.32.35:3100/",
+      ExpressUrl: window.InterfaceUrl.ExpressUrl,
       msg: "test promise",
       todo: { date: null, time: null, eat: null },
       todoList: [
@@ -62,11 +61,10 @@ export default defineComponent({
       ],
     };
   },
-
   components: {},
   computed: {},
   mounted() {
-    axios.get(this.basePort + "demos1/getTodoList").then((res) => {
+    axios.get(this.ExpressUrl + "demos1/getTodoList").then((res) => {
       this.todoList = res.data.data;
     });
   },
@@ -106,7 +104,7 @@ export default defineComponent({
         });
     },
   },
-});
+};
 </script>
 <style lang='scss' scoped>
 .todo-main {

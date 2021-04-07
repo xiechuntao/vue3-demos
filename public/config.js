@@ -1,14 +1,11 @@
 // 接口地址
-export const PORTS = {
+const InterfaceUrl = {
     // Node Native
-    NativePort: 'http://127.0.0.1:2000/',
+    NativeUrl: 'http://127.0.0.1:2000/',
     // Express Frame
-    ExpressPort: 'http://127.0.0.1:3000/'
+    ExpressUrl: 'http://127.0.0.1:3100/'
 };
-export const MAP = {
-    BaiduCenter: [],
-    GaodeCenter: []
-}
+window.InterfaceUrl = InterfaceUrl;
 
 // console.error(process.env.NODE_ENV)
-if (process.env.NODE_ENV === 'development') { } else if (process.env.NODE_ENV === "production") { }
+// if (process.env.NODE_ENV === 'development') { } else if (process.env.NODE_ENV === "production") { }

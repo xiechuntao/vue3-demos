@@ -25,3 +25,7 @@ yarn run test
 yarn run lint
 ```
 
+### Fast remove node_modules
+```
+rimarf node_modules
+```
