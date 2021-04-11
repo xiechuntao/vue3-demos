@@ -76,21 +76,12 @@ export default {
       this.$router.push({ name: value });
     },
     getHelloWorldPort() {
-      let url = "http://localhost:2000/";
-      // let url = "http://192.168.199.207:2000/";
-      axios.get(url).then((res) => {
-        this.msg = res.data;
-      });
+      // let url = "http://localhost:2000/";
+      // // let url = "http://192.168.199.207:2000/";
+      // axios.get(url).then((res) => {
+      //   this.msg = res.data;
+      // });
 
-      let url2 = "http://127.0.0.1:3100/";
-      let socket = io(url2, {
-        transports: ["websocket"],
-      }); // 指定连接地址
-
-      // 指定服务端的标识open 客户端利用on事件监听
-      socket.on("open", (data) => {
-        console.log(data);
-      });
     },
     closeDrawer() {},
   },
