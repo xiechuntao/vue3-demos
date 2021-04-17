@@ -42,6 +42,8 @@
       </div>
     </li>
   </ul>
+
+  <todo-list />
 </template>
 
 <script>
@@ -50,6 +52,9 @@ import axios from "axios";
 // debugger;
 export default {
   name: "1_helloXct",
+  components: {
+    todoList:()=>{require('./components/todolist')}
+  },
   data() {
     return {
       ExpressUrl: window.InterfaceUrl.ExpressUrl,

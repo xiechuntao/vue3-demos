@@ -1,4 +1,4 @@
-import { createRouter, /*createWebHashHistory,*/ createWebHistory } from "vue-router"
+import { createRouter, createWebHashHistory, createWebHistory } from "vue-router"
 import store from '../store/index.js'
 
 // 1. 定义路由组件， 注意，这里一定要使用 文件的全名（包含文件后缀名）

@@ -63,7 +63,7 @@ export default {
     height: 100%;
 
     // 地图样式切换控件
-    ::v-deep .amap-maptypecontrol {
+    :deep .amap-maptypecontrol {
       top: 20px;
       right: 120px;
     }
