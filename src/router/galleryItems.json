@@ -23,5 +23,10 @@
     "NO": 5,
     "EN": "multipleChoice",
     "CN": "多选"
+  },
+  {
+    "NO": 6,
+    "EN": "interviewQuestion",
+    "CN": "面试题复习"
   }
 ]

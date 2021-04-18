@@ -24,8 +24,8 @@
 
       </div>
     </li>
-    <li v-for="(item, i) in todoList"
-        :key="i">
+    <li v-for="(item, index) in todoList"
+        :key="index">
       <div>{{ item.date }}</div>
       <div>{{ item.time }}</div>
       <div>{{ item.eat }}</div>
