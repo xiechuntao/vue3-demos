@@ -2,44 +2,39 @@
   <div class="root">
     <header v-if="true">
       <h1 id="LOGO">
-        <img src="./assets/logo.png" alt="" style="height: 28px" />
+        <img src="./assets/logo.png"
+             alt=""
+             style="height: 28px" />
         HELLO XCT
         {{ msg }}
       </h1>
       <span class="title">{{ $route.meta.title }}</span>
 
-      <i
-        class="icon"
-        :class="drawer ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
-        @click="drawer = !drawer"
-      />
-      <router-link v-if="$router.currentRoute.value.name !== 'home'" to="/">
-        <i
-          v-if="$router.currentRoute.value.name !== 'home'"
-          to="/"
-          class="icon el-icon-back"
-        />
+      <i class="icon"
+         :class="drawer ? 'el-icon-s-fold' : 'el-icon-s-unfold'"
+         @click="drawer = !drawer" />
+      <router-link v-if="$router.currentRoute.value.name !== 'home'"
+                   to="/">
+        <i v-if="$router.currentRoute.value.name !== 'home'"
+           to="/"
+           class="icon el-icon-back" />
       </router-link>
     </header>
-    <article
-      :style="{ width: drawer ? 'calc(100% - 380px)' : 'calc(100% - 1px)' }"
-    >
-      <transition name="el-fade-in-linear">
-        <router-view />
-      </transition>
+    <article :style="{ width: drawer ? 'calc(100% - 380px)' : 'calc(100% - 1px)' }">
+      <router-view />
     </article>
 
     <!-- 右侧导航 v-show="drawer"-->
     <aside :style="{ width: drawer ? '380px' : '1px' }">
-      <transition name="el-fade-in-linear">
-        <div class="navigate">
-          <ul class="">
-            <li v-for="item in demoNames" :key="item.NO" @click="go(item)">
-              {{ `${item.NO}：${item.EN}` }} （{{ item.CN }}）
-            </li>
-          </ul>
-        </div>
-      </transition>
+      <div class="navigate">
+        <ul class="">
+          <li v-for="item in demoNames"
+              :key="item.NO"
+              @click="go(item)">
+            {{ `${item.NO}：${item.EN}` }} （{{ item.CN }}）
+          </li>
+        </ul>
+      </div>
     </aside>
 
     <footer>
@@ -54,14 +49,14 @@ import { mapGetters } from "vuex";
 export default {
   name: "App",
 
-  data() {
+  data () {
     return {
       msg: "--",
       drawer: false,
       direction: "rtl",
     };
   },
-  mounted() {
+  mounted () {
     this.getHelloWorldPort();
 
     console.error(process.env);
@@ -70,20 +65,19 @@ export default {
     ...mapGetters(["demoNames"]),
   },
   methods: {
-    go(item) {
+    go (item) {
       let value = `${item.NO}-${item.EN}`;
       console.log(value);
       this.$router.push({ name: value });
     },
-    getHelloWorldPort() {
+    getHelloWorldPort () {
       // let url = "http://localhost:2000/";
       // // let url = "http://192.168.199.207:2000/";
       // axios.get(url).then((res) => {
       //   this.msg = res.data;
       // });
-
     },
-    closeDrawer() {},
+    closeDrawer () { },
   },
 };
 </script>

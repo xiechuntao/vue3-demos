@@ -4,18 +4,18 @@
       <el-button @click="choiceAll()">
         {{ choiceAllBtn ? "取消全选" : "全选" }}
       </el-button>
-      <div
-        @click="choice(i, item.CN)"
-        :class="{ selected: item.selected }"
-        class="item"
-        v-for="(item, i) in list"
-        :key="i"
-      >
+      <div @click="choice(i, item.CN)"
+           :class="{ selected: item.selected }"
+           class="item"
+           v-for="(item, i) in list"
+           :key="i">
         {{ item.CN }}
       </div>
     </div>
     <div class="grid-right">
-      <div class="item" v-for="(item, i) in choiceItems" :key="i">
+      <div class="item"
+           v-for="(item, i) in choiceItems"
+           :key="i">
         {{ item.CN }}
         <button @click="del(i)">删除</button>
       </div>
@@ -26,7 +26,7 @@
 <script>
 import names from "/@/router/galleryItems.json";
 export default {
-  data() {
+  data () {
     return {
       choiceAllBtn: false,
       name: "5_multpleChoice",
@@ -38,8 +38,9 @@ export default {
   },
 
   computed: {},
-  created() {},
-  mounted() {
+  created () {
+  },
+  mounted () {
     this.list = _.cloneDeep(names);
     this.list.map((item, i) => {
       item.selected = false;
@@ -47,7 +48,7 @@ export default {
     // debugger;
   },
   methods: {
-    choiceAll() {
+    choiceAll () {
       if (this.choiceAllBtn === false) {
         this.choiceAllBtn = true;
         this.list.map((item, i) => {
@@ -62,7 +63,7 @@ export default {
         this.choiceItems = [];
       }
     },
-    choice(i) {
+    choice (i) {
       if (this.list[i].selected === true) {
         console.log(this.choiceItems);
         // 左侧反选
@@ -82,7 +83,7 @@ export default {
         this.choiceItems.push(this.list[i]);
       }
     },
-    del(i) {
+    del (i) {
       // 找到匹配的
       let delI = _.findIndex(this.list, (o) => {
         return o.NO === this.choiceItems[i].NO;

@@ -28,7 +28,7 @@ for (let item of demoNames) {
   let name = `${item.NO}-${item.EN}`;
   let title = `${item.NO}：${item.CN}`;
   demoRoutes.push({
-    name, meta: { title }, path: `/${name}`, component: () => import(`../views/${name}/home.vue`)
+    name, meta: { title }, path: `/${name}`, component: () => import(`../views/${name}/Home.vue`)
   })
 }
 /**
