@@ -1,8 +1,8 @@
 const { resolve } = require('path')
 export default {
-  resolve: {
+  // resolve: {
     alias: {
       '/@/': resolve(__dirname, './src'),
     }
-  }
+  // }
 }
